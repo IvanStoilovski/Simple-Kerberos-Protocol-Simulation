@@ -67,7 +67,7 @@ public class User {
    // This method is used when the initiating client receives a response from the server,
    // decrypts the response, authenticates it, receives a session key from the server
    // and attempts to communicate with the other user
-    public PacketYaYb reciveRespS(PacketYaYb p) {
+    public PacketYaYb receiveRespS(PacketYaYb p) {
         PacketYaYb packetYaYb;
         byte[] UserOwn = p.ya;
         byte[] UserOth = p.yb;
@@ -98,8 +98,8 @@ public class User {
     // This method is used when the user receives an initiation to communicate from another user to authenticate the server and the user
     public void receiveInitiation(PacketYaYb packet) throws ParseException {
         byte[] decrypted = aes.decrypt(packet.yb, KEK_U);
-        String recievedYb = new String(decrypted);
-        String[] parts = recievedYb.split("\\s+");
+        String receivedYb = new String(decrypted);
+        String[] parts = receivedYb.split("\\s+");
         String initiatorYb = parts[1];
         String Kses = parts[0];
         String lifetime = parts[2];

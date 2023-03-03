@@ -16,7 +16,7 @@ class Implementation {
         ExchangeSessionKey(a,b);
     }
     public void ExchangeSessionKey(User a, User b) throws ParseException {
-        b.receiveInitiation(a.reciveRespS(server.generateResp(server.receiveReqC(a.sendReqS(b)))));
+        b.receiveInitiation(a.receiveRespS(server.generateResp(server.receiveReqC(a.sendReqS(b)))));
         System.out.println(a.getId() + "'s session key: " + a.getSessionKey());
         System.out.println(b.getId() + "'s session key: " + b.getSessionKey());
         Communicate(a, b);
